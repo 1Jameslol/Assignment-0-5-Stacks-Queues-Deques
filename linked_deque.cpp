@@ -16,7 +16,7 @@ public:
     LinkedDeque() : frontNode(nullptr), backNode(nullptr) {}
     LinkedDeque(const LinkedDeque&) = delete;
     LinkedDeque& operator=(const LinkedDeque&) = delete;
-
+    //Destructor
     ~LinkedDeque() {
         while (frontNode != nullptr) {
             Node* nextNode = frontNode->next;
@@ -24,7 +24,7 @@ public:
             frontNode = nextNode;
         }
     }
-
+ //These use the Node struct and pointers to add or remove nodes
     void addFront(int value) {
         Node* newNode = new Node(value);
         newNode->next = frontNode;
@@ -50,7 +50,7 @@ public:
 
         backNode = newNode;
     }
-
+ //Deletes the nodes using the same logic as the add functions
     int removeFront() {
         checkNotEmpty();
 
@@ -110,6 +110,7 @@ private:
     Node* backNode;
 };
 
+//LinkedDeque tests
 void demoLinkedDeque() {
     std::cout << "\nLinked-list deque\n";
     LinkedDeque deque;

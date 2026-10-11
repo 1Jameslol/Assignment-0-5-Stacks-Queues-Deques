@@ -5,6 +5,8 @@
 
 class ArrayDeque {
 public:
+
+//This group of functions do similar calculations then removes or adds to the itemcount depending on the case
     ArrayDeque() : values(4), frontIndex(0), itemCount(0) {}
 
     void addFront(int value) {
@@ -55,6 +57,8 @@ public:
     }
 
 private:
+    
+    //For this function it essentially uses iteration to copy the larger values into a new array and makes that the new array
     void makeSpaceIfFull() {
         if (itemCount < values.size()) {
             return;
@@ -70,6 +74,7 @@ private:
         frontIndex = 0;
     }
 
+    //no explanation needed
     void checkNotEmpty() const {
         if (isEmpty()) {
             throw std::underflow_error("ArrayDeque is empty");
@@ -81,6 +86,7 @@ private:
     std::size_t itemCount;
 };
 
+//Creates and tests the deque
 void demoArrayDeque() {
     std::cout << "\nArray-based deque\n";
     ArrayDeque deque;

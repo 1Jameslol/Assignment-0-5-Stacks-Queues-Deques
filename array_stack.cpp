@@ -4,6 +4,7 @@
 
 class ArrayStack {
 public:
+    //These functions essentially use the already built in cpp logic from vectors to make the logic of the stack
     void push(int value) {
         values.push_back(value);
     }
@@ -35,6 +36,7 @@ private:
     std::vector<int> values;
 };
 
+//Array stack tests
 void demoArrayStack() {
     std::cout << "\nArray-based stack (LIFO)\n";
     ArrayStack stack;

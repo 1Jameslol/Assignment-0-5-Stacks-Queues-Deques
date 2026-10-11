@@ -14,7 +14,7 @@ public:
     LinkedQueue() : frontNode(nullptr), backNode(nullptr) {}
     LinkedQueue(const LinkedQueue&) = delete;
     LinkedQueue& operator=(const LinkedQueue&) = delete;
-
+    //Destructor
     ~LinkedQueue() {
         while (frontNode != nullptr) {
             Node* nextNode = frontNode->next;
@@ -22,7 +22,7 @@ public:
             frontNode = nextNode;
         }
     }
-
+   //Uses the node logic to add or remove nodes
     void enqueue(int value) {
         Node* newNode = new Node(value);
 
@@ -70,6 +70,7 @@ private:
     Node* backNode;
 };
 
+//Tests the LinkedQueue
 void demoLinkedQueue() {
     std::cout << "\nLinked-list queue (FIFO)\n";
     LinkedQueue queue;

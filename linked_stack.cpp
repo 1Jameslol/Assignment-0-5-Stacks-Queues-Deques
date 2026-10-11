@@ -14,7 +14,7 @@ public:
     LinkedStack() : topNode(nullptr) {}
     LinkedStack(const LinkedStack&) = delete;
     LinkedStack& operator=(const LinkedStack&) = delete;
-
+    //Destructor
     ~LinkedStack() {
         while (topNode != nullptr) {
             Node* nextNode = topNode->next;
@@ -23,6 +23,7 @@ public:
         }
     }
 
+   //Uses the node struct to add or remove nodes
     void push(int value) {
         Node* newNode = new Node(value);
         newNode->next = topNode;
@@ -58,6 +59,8 @@ private:
     Node* topNode;
 };
 
+
+//Tests the LinkedStack
 void demoLinkedStack() {
     std::cout << "\nLinked-list stack (LIFO)\n";
     LinkedStack stack;

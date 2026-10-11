@@ -7,6 +7,8 @@ class ArrayQueue {
 public:
     ArrayQueue() : values(4), frontIndex(0), itemCount(0) {}
 
+
+    //These functions do the same kind of logic as the deque but a different calculation to find the new indices
     void enqueue(int value) {
         if (itemCount == values.size()) {
             grow();
@@ -36,6 +38,8 @@ public:
     }
 
 private:
+
+    //The grow function doubles the arrays size and uses iteration to copy the items
     void grow() {
         std::vector<int> largerValues(values.size() * 2);
 
@@ -59,6 +63,7 @@ private:
     std::size_t itemCount;
 };
 
+//Array queue tests
 void demoArrayQueue() {
     std::cout << "\nArray-based queue (FIFO)\n";
     ArrayQueue queue;
